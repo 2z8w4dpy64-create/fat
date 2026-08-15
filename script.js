@@ -1,8 +1,6 @@
 // Elements
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
-const envelope2 = document.getElementById("envelope2-container");
-const letter2 = document.getElementById("letter2-container");
 const noBtn = document.querySelector(".no-btn");
 const yesBtn = document.querySelector(".btn[alt='Yes']");
 
@@ -16,12 +14,6 @@ const finalText = document.getElementById("final-text");
 envelope.addEventListener("click", () => {
     envelope.style.display = "none";
     letter.style.display = "flex";
-
-    // Click Envelope
-
-envelope2.addEventListener("click", () => {
-    envelope2.style.display = "none";
-    letter2.style.display = "flex";
 
     setTimeout( () => {
         document.querySelector(".letter-window").classList.add("open");
