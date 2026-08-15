@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("pokemon-bg");
+    background-image: url("pokemon-bg.png");
     font-family: "Pixelify Sans", sans-serif;
 }
 
