@@ -21,12 +21,12 @@ body {
 /* Envelope Screen */
 #envelope-container {
     text-align: center;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 @keyframes pulse {
     0% {
-        transform:scale(1);
+        transform: scale(1);
     }
     50% {
         transform: scale(1.1);
@@ -36,38 +36,44 @@ body {
     }
 }
 
-#envelope{
+#envelope {
     width: 200px;
     animation: pulse 1.5s infinite;
     cursor: pointer;
 }
 
-#letter-container{
+#letter-container {
     display: none;
-    position:fixed;
+    position: fixed;
     inset: 0;
     justify-content: center;
     align-items: center;
 }
 
-.letter-window{
+.letter-window {
     width: 90vw;
-    max-width: 800px;
-    aspect-ratio: 3/2;
-    padding: 20px 20px 0 20px;
+    max-width: 650px;
+    min-height: 420px;
+    
+    /* Background Image setup */
+    background-image: url("window.png");
+    background-size: 100% 100%; /* Stretches window frame perfectly to fill the container */
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* Layout & Alignment */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("window.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 12px;
-    gap: 1px;
-    padding-top: 180px;
+    box-sizing: border-box;
+    
+    /* Padding pushes text/buttons down into the white canvas area below the top pink bar */
+    padding: 65px 40px 30px 40px;
+    gap: 10px;
 
+    /* Animations */
     transform: scale(1.2);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
@@ -78,53 +84,52 @@ body {
     opacity: 1;
 }
 
-
-
-
 h1 {
-    font-size: 30px;
-    margin:0;
+    font-size: 28px;
+    margin: 0;
 }
 
 p {
-    font-size: 40px;
+    font-size: 24px;
+    margin: 5px 0;
 }
 
 /* Cat */
 
 .cat {
-    width: 250px;
-    margin: 10px 0;
+    width: 180px;
+    margin: 5px 0;
     transition: width 0.4s ease;
 }
 
 .letter-window.final .cat {
-    width: 180px;
+    width: 140px;
 }
 
 /* buttons */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+    position: relative;
+    margin-top: 5px;
+}
+
+.no-wrapper {
     position: relative;
 }
 
-.no-wrapper{
-    position:relative;
-}
-
 .btn {
-    width: 120px;
+    width: 100px;
     cursor: pointer;
     user-select: none;
 }
 
 .yes-btn,
 .no-btn {
-width: 120px;
-height: auto;
-display: inline-block;
+    width: 100px;
+    height: auto;
+    display: inline-block;
 }
 
 .yes-btn {
@@ -135,18 +140,19 @@ display: inline-block;
 }
 
 .no-btn {
-    z-index: 1;
     position: relative;
+    z-index: 1;
     transition: transform 0.15s ease;
     cursor: default;
 }
 
-.final-text{
-    font-size: 22px;
+.final-text {
+    font-size: 18px;
     line-height: 1.4;
     text-align: center;
     display: inline-block;
-    padding: 10px 20px;
-    background-color: rgba(255,240,240,0.5);
-    border-radius: 12px;
+    padding: 8px 16px;
+    background-color: rgba(255, 240, 240, 0.7);
+    border-radius: 8px;
+    margin-top: 5px;
 }
