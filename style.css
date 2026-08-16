@@ -1,158 +1,304 @@
 html, body {
+
     margin: 0;
+
     padding: 0;
+
     width: 100%;
+
     height: 100%;
+
     min-height: 100vh;
+
 }
+
+
 
 body {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     background-image: url("pokemon-bg.png");
+
     background-repeat: no-repeat;
+
     background-size: 100% 100%; /* Forces the image to stretch 100% horizontally and vertically */
+
     background-position: center center;
+
     background-attachment: fixed;
+
     font-family: "Pixelify Sans", sans-serif;
+
 }
+
+
 
 /* Envelope Screen */
+
 #envelope-container {
+
     text-align: center;
-    cursor: pointer;
+
+    cursor:pointer;
+
 }
+
+
 
 @keyframes pulse {
+
     0% {
-        transform: scale(1);
+
+        transform:scale(1);
+
     }
+
     50% {
+
         transform: scale(1.1);
+
     }
+
     100% {
+
         transform: scale(1);
+
     }
+
 }
 
-#envelope {
+
+
+#envelope{
+
     width: 200px;
+
     animation: pulse 1.5s infinite;
+
     cursor: pointer;
+
 }
 
-#letter-container {
+
+
+#letter-container{
+
     display: none;
-    position: fixed;
+
+    position:fixed;
+
     inset: 0;
+
     justify-content: center;
+
     align-items: center;
+
 }
 
-.letter-window {
+
+
+.letter-window{
+
     width: 90vw;
-    max-width: 650px;
-    min-height: 420px;
-    
-    /* Background Image setup */
-    background-image: url("window.png");
-    background-size: 100% 100%; /* Stretches window frame perfectly to fill the container */
-    background-repeat: no-repeat;
-    background-position: center;
-    
-    /* Layout & Alignment */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    
-    /* Padding pushes text/buttons down into the white canvas area below the top pink bar */
-    padding: 65px 40px 30px 40px;
-    gap: 10px;
 
-    /* Animations */
+    max-width: 800px;
+
+    aspect-ratio: 3/2;
+
+    padding: 20px 20px 0 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background-image: url("window.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    border-radius: 12px;
+
+    gap: 1px;
+
+    padding-top: 180px;
+
+
+
     transform: scale(1.2);
+
     opacity: 0;
+
     transition: transform 0.6s ease, opacity 0.6s ease;
+
 }
+
+
 
 .letter-window.open {
+
     transform: scale(1);
+
     opacity: 1;
+
 }
+
+
+
+
+
+
+
+
 
 h1 {
-    font-size: 28px;
-    margin: 0;
+
+    font-size: 30px;
+
+    margin:0;
+
 }
 
+
+
 p {
-    font-size: 24px;
-    margin: 5px 0;
+
+    font-size: 40px;
+
 }
+
+
 
 /* Cat */
 
+
+
 .cat {
-    width: 180px;
-    margin: 5px 0;
+
+    width: 250px;
+
+    margin: 10px 0;
+
     transition: width 0.4s ease;
+
 }
+
+
 
 .letter-window.final .cat {
-    width: 140px;
+
+    width: 180px;
+
 }
+
+
 
 /* buttons */
+
 .buttons {
+
     display: flex;
+
     justify-content: center;
-    gap: 20px;
+
+    gap: 30px;
+
     position: relative;
-    margin-top: 5px;
+
 }
 
-.no-wrapper {
-    position: relative;
+
+
+.no-wrapper{
+
+    position:relative;
+
 }
+
+
 
 .btn {
-    width: 100px;
+
+    width: 120px;
+
     cursor: pointer;
+
     user-select: none;
+
 }
+
+
 
 .yes-btn,
+
 .no-btn {
-    width: 100px;
-    height: auto;
-    display: inline-block;
+
+width: 120px;
+
+height: auto;
+
+display: inline-block;
+
 }
+
+
 
 .yes-btn {
+
     position: relative;
+
     z-index: 2;
+
     transform-origin: center center;
+
     transition: transform 0.3s ease;
+
 }
+
+
 
 .no-btn {
-    position: relative;
+
     z-index: 1;
+
+    position: relative;
+
     transition: transform 0.15s ease;
+
     cursor: default;
+
 }
 
-.final-text {
-    font-size: 18px;
+
+
+.final-text{
+
+    font-size: 22px;
+
     line-height: 1.4;
+
     text-align: center;
+
     display: inline-block;
-    padding: 8px 16px;
-    background-color: rgba(255, 240, 240, 0.7);
-    border-radius: 8px;
-    margin-top: 5px;
-}
+
+    padding: 10px 20px;
+
+    background-color: rgba(255,240,240,0.5);
+
+    border-radius: 12px;
+
+} 
+
